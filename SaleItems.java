@@ -168,6 +168,8 @@ public class SaleItems {
           double subtotal = prediscount - discount;
           double total = subtotal * 1.07;
           double tax = subtotal * .07;
+          
+          //Based on the info inputted, the system will print a receipt
           System.out.println ("\nYou won a 10% discount!");
           
           if(totpaint > 0){
@@ -188,6 +190,8 @@ public class SaleItems {
           System.out.println ("  Discount:               -$" + discount);
           System.out.println ("\n  Total                    $" + f.format(total));     
           
+          //Taking payment input from the user and prompting for a correct amount until the user
+          //enters one at least equal to the order amount
           System.out.println ("\nPlease enter you payment:");
           float payment = input.nextFloat();
           float change = (float)total - payment;
@@ -215,6 +219,7 @@ public class SaleItems {
           double total = subtotal * 1.07;
           System.out.println ("You did not get a discount! Better luck next time!");
           
+          //Based on the info inputted, the system will print a receipt
           if(totpaint > 0){
           System.out.println (totpaint + "   paintings:             $" + f.format(paintCost));
           }
@@ -231,7 +236,9 @@ public class SaleItems {
           System.out.println ("\n  Subtotal:                $" + f.format(subtotal));
           System.out.println ("  Tax:                     $" + f.format(taxamount));
           System.out.println ("\n  Total                    $" + f.format(total));                   
-                              
+          
+          //Taking payment input from the user and prompting for a correct amount until the user
+          //enters one at least equal to the order amount
           System.out.println ("\nPlease enter you payment:");
           float payment = input.nextFloat();
           double change = total - payment;
