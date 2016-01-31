@@ -64,7 +64,20 @@ public class SaleItems {
         double painting = 100.00;
         double paintCost = painting * totpaint;
         
-        System.out.println("Here is your order:\n" + totbooks + " books \n" + totpaint + " paintings \n" + totbookmarks + " bookmarks");
+        //Displays the customer's current order
+        System.out.println("Here is your order:");
+        if(totpaint > 0){
+          System.out.println (totpaint + " piantings");
+          }
+          if(totbooks > 0){
+          System.out.println (totbooks + " books");
+          }
+          if (indiv > 0){
+          System.out.println (indiv + " individual bookmarks");
+          }
+          if (packs > 0){
+          System.out.println (packs + " packs of bookmarks");
+          }
         
         System.out.println("Is this okay? \nEnter 1 for 'yes' and 2 for 'no'.");
         int isOkay = input.nextInt();
@@ -142,12 +155,25 @@ public class SaleItems {
                     paintCost = painting * totpaint;
             }
             
-            System.out.println("Here is your order:\n" + totbooks + " books \n" + totpaint + " paintings \n" + totbookmarks + " bookmarks");
+            //Displays the customer's current order
+            System.out.println("Here is your order:");
+            if(totpaint > 0){
+              System.out.println (totpaint + " piantings");
+            }
+            if(totbooks > 0){
+              System.out.println (totbooks + " books");
+            }
+            if (indiv > 0){
+              System.out.println (indiv + " individual bookmarks");
+            }
+            if (packs > 0){
+              System.out.println (packs + " packs of bookmarks");
+            }
             
             System.out.println("Is this okay? \nEnter 1 for 'yes' and 2 for 'no':");
             isOkay = input.nextInt();
             
-            //Promts the user for 
+            //Promts the user to choose a currect option 
             while (isOkay != 1 && isOkay != 2){
               System.out.println ("That is not a valid response!\nEnter 1 for 'yes' and 2 for 'no'");
               isOkay = input.nextInt();
@@ -187,7 +213,7 @@ public class SaleItems {
           
           System.out.println ("\n  Subtotal:                $" + f.format(subtotal));
           System.out.println ("  Tax:                     $" + f.format(tax));
-          System.out.println ("  Discount:               -$" + discount);
+          System.out.println ("  Discount:               -$" + f.format(discount));
           System.out.println ("\n  Total                    $" + f.format(total));     
           
           //Taking payment input from the user and prompting for a correct amount until the user
@@ -256,9 +282,9 @@ public class SaleItems {
             System.out.println ("Your change is $" + f.format(change));
           
           }
-          
-          System.out.println ("Thank you for your patronage!");
         }
+          
+        System.out.println ("Thank you for your patronage!");
         
         System.out.println ("\n\nIs there another customer in line? \nEnter 1 for 'yes' and 2 for 'no'");
         answer = input.nextInt();
@@ -270,6 +296,7 @@ public class SaleItems {
           
         }
         }
+        
         
         System.exit(0);
     }    
