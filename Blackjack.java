@@ -13,7 +13,7 @@ public class Blackjack{
     
     Scanner input = new Scanner(System.in);
     //Reads from package used to help make this class
-        
+    
     
     int handsPlayed = 0;
     int handsWon = 0;
@@ -36,30 +36,30 @@ public class Blackjack{
       PrintWriter outputFile = new PrintWriter(file);
       System.out.println("Welcome to Your New Game!");
     } else {
+      
       System.out.println ("Welcome back to you game " + userName);
+      FileReader fileReader = new FileReader(file);
+      BufferedReader reader = new BufferedReader(fileReader);
+      StringBuilder out = new StringBuilder();
+      String line;
+      while ((line = reader.readLine()) != null) {
+        out.append(line);
+      }
+      reader.close();
+      String text = out.toString();
+      String[] userSave = text.split(" ");
+      
+      
+      //Checking for the existence of certain saved information
+      //In the file and importing their values into the game
+      handsPlayed =  Integer.parseInt(userSave[1]);
+      handsWon = Integer.parseInt(userSave[2]);
+      moneySaved = Double.parseDouble(userSave[3]);
     }
     
     Scanner inputFile = new Scanner(file);
-
-        FileReader fileReader = new FileReader(file);
-        BufferedReader reader = new BufferedReader(fileReader);
-        StringBuilder out = new StringBuilder();
-        String line;
-        while ((line = reader.readLine()) != null) {
-            out.append(line);
-        }
-        reader.close();
-        String text = out.toString();
-        String[] userSave = text.split(" ");
-
     
-    //Checking for the existence of certain saved information
-    //In the file and importing their values into the game
     
-       handsPlayed =  Integer.parseInt(userSave[1]);
-       handsWon = Integer.parseInt(userSave[2]);
-       moneySaved = Double.parseDouble(userSave[3]);
-   
     
     
     
